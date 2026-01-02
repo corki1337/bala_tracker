@@ -40,16 +40,16 @@ Projekt wykorzystuje specyficzną konfigurację wersji ze względu na stabilnoś
 graph TD
     %% Definicje stylów
     classDef power fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef gnd fill:#999,stroke:#333,stroke-width:2px;
     classDef signal fill:#ff9,stroke:#333,stroke-width:2px;
+    classDef board fill:#9cf,stroke:#333,stroke-width:2px;
 
-    %% Komponenty
-    HOTA_D6_PRO[Zasilacz 6V]
-    RPi[Raspberry Pi 5]
-    ESP[ESP32-S3 WROOM]
-    ServoX[Serwo Oś X]
-    ServoY[Serwo Oś Y]
-    Laser[Laser 5mW 650nm 5V]
+    %% Komponenty (z przypisanymi stylami)
+    HOTA_D6_PRO[Zasilacz 6V]:::power
+    RPi[Raspberry Pi 5]:::board
+    ESP[ESP32-S3 WROOM]:::board
+    ServoX[Serwo Oś X]:::signal
+    ServoY[Serwo Oś Y]:::signal
+    Laser[Laser 5mW 650nm 5V]:::signal
 
     %% Połączenia USB
     RPi -- USB (Serial/Micro-ROS) --> ESP
@@ -69,12 +69,11 @@ graph TD
     
     %% Wspólna masa (Kluczowe!)
     ESP -. Wspólne GND .- HOTA_D6_PRO
-
-
+```
 
 ## ⚙️ Instalacja
 
 ### 1. Klonowanie repozytorium
 ```bash
-git clone https://github.com/corki1337/bala_tracker
-cd bala
+git clone [https://github.com/corki1337/bala_tracker.git](https://github.com/corki1337/bala_tracker.git)
+cd bala_tracker
