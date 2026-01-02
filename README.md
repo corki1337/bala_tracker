@@ -34,6 +34,44 @@ Projekt wykorzystuje specyficzną konfigurację wersji ze względu na stabilnoś
 - `start_robot.sh` - Skrypt bash automatyzujący uruchamianie (Agent + Kamera).
 - `bala_robot.service` - Plik usługi systemowej (dla autostartu).
 
+## 🔌 Schemat Połączeń
+
+```mermaid
+graph TD
+    %% Definicje stylów
+    classDef power fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef gnd fill:#999,stroke:#333,stroke-width:2px;
+    classDef signal fill:#ff9,stroke:#333,stroke-width:2px;
+
+    %% Komponenty
+    HOTA_D6_PRO[Zasilacz 6V]
+    RPi[Raspberry Pi 5]
+    ESP[ESP32-S3 WROOM]
+    ServoX[Serwo Oś X]
+    ServoY[Serwo Oś Y]
+    Laser[Laser 5mW 650nm 5V]
+
+    %% Połączenia USB
+    RPi -- USB (Serial/Micro-ROS) --> ESP
+
+    %% Połączenia Zasilania
+    HOTA_D6_PRO -- 6V --> ServoX
+    HOTA_D6_PRO -- 6V --> ServoY
+    HOTA_D6_PRO -- GND --> ServoX
+    HOTA_D6_PRO -- GND --> ServoY
+    HOTA_D6_PRO -- GND --> ESP
+    RPi -- 5V --> Laser
+    RPi -- GND --> Laser
+    
+    %% Połączenia Sygnałowe
+    ESP -- GPIO 15 (PWM) --> ServoX
+    ESP -- GPIO 16 (PWM) --> ServoY
+    
+    %% Wspólna masa (Kluczowe!)
+    ESP -. Wspólne GND .- HOTA_D6_PRO
+
+
+
 ## ⚙️ Instalacja
 
 ### 1. Klonowanie repozytorium
