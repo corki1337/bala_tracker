@@ -38,10 +38,7 @@ Projekt wykorzystuje specyficzną konfigurację wersji ze względu na stabilnoś
 
 ```mermaid
 graph TD
-    %% Definicje stylów
-    classDef power fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef signal fill:#ff9,stroke:#333,stroke-width:2px;
-    classDef board fill:#9cf,stroke:#333,stroke-width:2px;
+
 
     %% Komponenty (z przypisanymi stylami)
     HOTA_D6_PRO[Zasilacz 6V]:::power
