@@ -5,7 +5,7 @@ Projekt robota wykorzystującego wizję komputerową do śledzenia kolorowych ob
 ## 🚀 Funkcjonalności
 
 - **Wykrywanie obiektów:** Analiza obrazu w czasie rzeczywistym (OpenCV) na Raspberry Pi.
-- **Śledzenie:** Algorytm obliczający koordynaty obiektu i sterujący serwami, aby utrzymać obiekt w centrum kadru.
+- **Śledzenie:** Algorytm obliczający koordynaty obiektu i sterujący serwami, aby namierzyć go laserem.
 - **Komunikacja:** Micro-ROS (serial transport) łączący ROS 2 Jazzy z mikrokontrolerem.
 - **Automatyzacja:** Skrypt "One-Click" do uruchamiania całego systemu.
 
