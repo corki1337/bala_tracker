@@ -1,0 +1,7 @@
+{
+    "names": {
+        "micro_ros_utilities": {
+            "cmake-args": ["-DBUILD_TESTING=OFF"]
+        }
+    }
+}
