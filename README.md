@@ -15,6 +15,7 @@ Projekt robota wykorzystującego wizję komputerową do śledzenia kolorowych ob
 - **Mikrokontroler:** Freenove ESP32-S3 WROOM
 - **Wizja:** Raspberry Pi Camera HD v3 12MPx
 - **Mechanika:** Pan-Tilt na serwomechanizmach
+- **Laser:** Dioda laserowa 5mW czerwona 650nm 5V - kropka
 
 ## 💻 Software & Wymagania
 
